@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 214 60% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 60% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 60% 16%;
+
+    --primary: 214 75% 15%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 216 33% 97%;
+    --secondary-foreground: 214 75% 15%;
+
+    --muted: 216 33% 97%;
+    --muted-foreground: 214 15% 46%;
+
+    --accent: 207 100% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --sunoco-red: 0 100% 40%;
+    --sunoco-red-foreground: 0 0% 100%;
+
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 207 100% 42%;
+
+    --radius: 0.75rem;
+
+    --section-gray: 216 33% 97%;
+    --footer-bg: 214 80% 10%;
+    --footer-dark: 214 82% 8%;
+
+    --font-heading: 'Barlow Condensed', sans-serif;
+    --font-body: 'Source Sans 3', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .heading-display {
+    font-family: var(--font-heading);
+    @apply font-bold uppercase tracking-wide;
+  }
+
+  .text-body {
+    font-family: var(--font-body);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out both;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    @apply shadow-xl -translate-y-1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
